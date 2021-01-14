@@ -12,7 +12,9 @@ resource "aws_vpc" "hashicat" {
     environment = "Production"
   }
 }
-
+tags = {
+    Department = "devops"
+  }
 resource "aws_subnet" "hashicat" {
   vpc_id     = aws_vpc.hashicat.id
   cidr_block = var.subnet_prefix
