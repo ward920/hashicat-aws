@@ -193,7 +193,8 @@ resource "aws_key_pair" "hashicat" {
   key_name   = local.private_key_filename
   public_key = tls_private_key.hashicat.public_key_openssh
 }
-    freeform_tags =  {
-           Department = "devops"
-           Billable = "true"
-   }
+
+mandatory_tags = [
+  Department = "devops"
+  Billable = "true"
+]
