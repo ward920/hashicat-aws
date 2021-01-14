@@ -195,6 +195,6 @@ resource "aws_key_pair" "hashicat" {
 }
 
 mandatory_tags = [
-  Department = "devops"
-  Billable = "true"
+  ,Department = "devops"
+  ,Billable = "true"
 ]
