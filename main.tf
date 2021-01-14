@@ -12,9 +12,7 @@ resource "aws_vpc" "hashicat" {
     environment = "Production"
   }
 }
-tags = {
-    Department = "devops"
-  }
+
 resource "aws_subnet" "hashicat" {
   vpc_id     = aws_vpc.hashicat.id
   cidr_block = var.subnet_prefix
@@ -195,3 +193,7 @@ resource "aws_key_pair" "hashicat" {
   key_name   = local.private_key_filename
   public_key = tls_private_key.hashicat.public_key_openssh
 }
+    freeform_tags =  {
+           Department = "devops"
+           Billable = "true"
+   }
